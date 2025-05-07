@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Footer Template
  * @package Mangrove Collection
@@ -6,19 +7,20 @@
  */
 ?>
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
-        <nav class="footer-nav">
-            <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'footer-menu',
-                    'container'      => false,
-                    'items_wrap'     => '<ul>%3$s</ul>',
-                ) );
-            ?>
-        </nav> 
-    </footer>
+<footer class="site-footer container">
+    <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+    <nav class="footer-nav">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'footer-menu',
+            'container'      => false,
+            'items_wrap'     => '<ul>%3$s</ul>',
+        ));
+        ?>
+    </nav>
+</footer>
 </main>
 <?php wp_footer(); ?>
 </body>
+
 </html>

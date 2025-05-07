@@ -1,5 +1,208 @@
+/* Reset */
 * {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+}
+
+/* Utility Classes */
+
+/* Flexbox */
+.flex {
+     display: flex;
+}
+.flex-center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.flex-column {
+     display: flex;
+     flex-direction: column;
+}
+.flex-wrap {
+     flex-wrap: wrap;
+}
+
+/* Grid */
+.grid {
+     display: grid;
+}
+.grid-cols-2 {
+     grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+     grid-template-columns: repeat(3, 1fr);
+}
+.grid-gap-10 {
+     gap: 10px;
+}
+.grid-gap-20 {
+     gap: 20px;
+}
+
+/* Spacing */
+.mt-10 {
+     margin-top: 10px;
+}
+.mt-20 {
+     margin-top: 20px;
+}
+.mb-10 {
+     margin-bottom: 10px;
+}
+.mb-20 {
+     margin-bottom: 20px;
+}
+.p-10 {
+     padding: 10px;
+}
+.p-20 {
+     padding: 20px;
+}
+.px-10 {
+     padding-left: 10px;
+     padding-right: 10px;
+}
+.py-10 {
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+/* Width and Layout */
+.w-full {
+     width: 100%;
+}
+.max-w-1200 {
+     max-width: 1200px;
+     margin: 0 auto;
+}
+
+/* Borders */
+.border {
+     border: 1px solid #ddd;
+}
+.border-gray {
+     border-color: #ccc;
+}
+.rounded {
+     border-radius: 4px;
+}
+.rounded-lg {
+     border-radius: 8px;
+}
+
+/* Backgrounds */
+.bg-light {
+     background-color: #f9f9f9;
+}
+.bg-gray {
+     background-color: #f1f1f1;
+}
+
+/* Typography */
+.text-center {
+     text-align: center;
+}
+.text-lg {
+     font-size: 1rem;
+}
+.text-xl {
+     font-size: 2rem;
+}
+.text-bold {
+     font-weight: bold;
+}
+.text-gray {
+     color: #555;
+}
+.text-dark {
+     color: #333;
+}
+.text-blue {
+     color: #0073aa;
+}
+.text-decoration-none {
+     text-decoration: none;
+}
+.text-decoration-underline {
+     text-decoration: underline;
+}
+
+/* Hover Effects */
+.hover-underline:hover {
+     text-decoration: underline;
+}
+
+/* Applying Utility Classes to Your 404 Page */
+
+/* Container styling */
+.container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 20px;
+}
+
+/* Error 404 section */
+.error-404 {
+     text-align: center;
+     padding-top: 50px;
+     padding-bottom: 50px;
+     padding-left: 20px;
+     padding-right: 20px;
+     background-color: #f9f9f9;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+}
+
+/* Page header */
+.page-header .page-title {
+     font-size: 2rem;
+     font-weight: bold;
+     color: #333;
+     margin-bottom: 20px;
+}
+
+/* Page content */
+.page-content {
+     font-size: 1rem;
+     color: #555;
+     line-height: 1.6;
+}
+
+.page-content a {
+     color: #0073aa;
+     text-decoration: none;
+}
+
+.page-content a:hover {
+     text-decoration: underline;
+}
+
+/* Sidebar styling */
+.sidebar {
+     margin-top: 30px;
+     padding: 20px;
+     background-color: #f1f1f1;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+}
+
+.main-navigation ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     gap: 20px;
+     background: gray;
+     padding: 10px;
+}
+
+.main-navigation > ul > li {
+     margin-right: 20px;
+}
+.main-navigation > ul > li > a {
+     text-decoration: none;
+     color: #0073aa;
+     font-weight: bold;
 }
