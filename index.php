@@ -10,7 +10,7 @@
  get_header();
 ?>
 
-<main>
+
     <h1>Welcome to the Mangrove Collection</h1>
     <p>This is the main template file for the Mangrove Collection theme.</p>
 
@@ -32,7 +32,7 @@
         ?>  
 
 
-</main>
+
 
 
 <?php
