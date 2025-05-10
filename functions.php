@@ -7,17 +7,17 @@
  */
 
 
-
 if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 
-
-
-
 if (!defined("MANGROVE_COLLECTION_DIR_PATH")) {
     define("MANGROVE_COLLECTION_DIR_PATH", untrailingslashit(get_template_directory()));
+}
+
+if (!defined("MANGROVE_COLLECTION_DIR_URI")) {
+    define("MANGROVE_COLLECTION_DIR_URI", untrailingslashit(get_template_directory_uri()));
 }
 
 require_once MANGROVE_COLLECTION_DIR_PATH . '/inc/helpers/autoloader.php';
