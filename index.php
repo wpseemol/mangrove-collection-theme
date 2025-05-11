@@ -12,7 +12,7 @@ get_header();
 ?>
 
 <div class="container mx-auto p-4">
-    <div class="hero bg-green-900 text-white p-6 rounded-lg shadow-lg">
+    <div class="hero bg-green-600/10 p-6 rounded-lg shadow-lg">
         <h1 class="text-4xl font-bold">Mangrove Collection</h1>
         <p class="text-lg">Explore the beauty of mangroves and their importance to our ecosystem.</p>
     </div>
