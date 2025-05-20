@@ -214,6 +214,17 @@ Add this if you want your theme to inherit the default block styles, or as a sta
 **Tip:**  
 You can override or extend these styles in your theme’s stylesheet if you want to customize the appearance of specific blocks.
 
+### `align-wide`
+
+Enables support for wide and full alignment options in the block editor, allowing blocks (such as images and groups) to extend beyond the normal content width.
+
+```php
+add_theme_support( 'align-wide' );
+```
+
+**Note:**  
+After enabling this, blocks in the editor will have "Wide width" and "Full width" alignment options. Make sure your theme's CSS supports these alignments by targeting the `.alignwide` and `.alignfull` classes.
+
 ---
 
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.

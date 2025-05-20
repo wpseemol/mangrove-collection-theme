@@ -65,6 +65,8 @@ class MANGROVE_COLLECTION_THEME
             "style"
         ));
 
+        add_theme_support("align-wide");
+
         add_theme_support("wp-block-styles");
 
         add_editor_style();
