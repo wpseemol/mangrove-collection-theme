@@ -34,16 +34,22 @@ class MANGROVE_COLLECTION_THEME
         add_theme_support('title-tag');
 
         add_theme_support("custom-logo", array(
-            'header-text' => array('site-title', 'site-description'),
-            'height' => 100,
-            'width' => 400,
-            'flex-height' => true,
-            'flex-width' => true,
+            'header-text'  => array('site-title', 'site-description'),
+            'height'       => 100,
+            'width'        => 400,
+            'flex-height'  => true,
+            'flex-width'   => true,
         ));
 
         add_theme_support("custom-background", array(
-            "default-color" => "#fff",
-            "default-image" => "",
+            "default-color"  => "#fff",
+            "default-image"  => "",
+            "default-repeat" => "no-repeat",
+
         ));
+
+        add_theme_support("post-thumbnails");
+
+        add_theme_support("customize-selective-refresh-widgets");
     }
 }
