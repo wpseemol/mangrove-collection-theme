@@ -28,7 +28,7 @@
     if (function_exists('wp_body_open')) {
         wp_body_open();
     } ?>
-    <main class=" ">
+    <main class="">
         <header class="bg-green-900 ">
             <?php get_template_part('template-parts/header/nav'); ?>
         </header>

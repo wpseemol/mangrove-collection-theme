@@ -17,8 +17,9 @@ class MANGROVE_COLLECTION_THEME
 
     protected function __construct()
     {
-
+        // Load Class.
         Assets::get_instance();
+        Menus::get_instance();
 
         // Load the theme's text domain for translations
         $this->setup_hooks();
@@ -70,5 +71,10 @@ class MANGROVE_COLLECTION_THEME
         add_theme_support("wp-block-styles");
 
         add_editor_style();
+
+        global $content_width;
+        if (! isset($content_width)) {
+            $content_width = 1240;
+        }
     }
 }

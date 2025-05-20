@@ -8,21 +8,23 @@
 
 ?>
 
-<div class="nav-menu flex justify-between items-center p-4 container mx-auto text-white">
-    <div class="logo text-3xl font-bold capitalize">
+<div class="nav-menu flex justify-between items-center container mx-auto text-white">
+    <div class="logo text-3xl font-bold capitalize max-h-[5rem]">
 
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-            <?php if (has_custom_logo()) {
-                the_custom_logo();
-            } else { ?>
+
+        <?php if (has_custom_logo()) {
+            the_custom_logo();
+        } else { ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>">
                 <h1><?php bloginfo('name'); ?></h1>
-            <?php } ?>
-        </a>
+            </a>
+        <?php } ?>
+
 
     </div>
     <nav class="main-navigation text-lg font-bold">
         <?php wp_nav_menu(array(
-            'theme_location' => 'primary',
+            'theme_location' => 'mangrove-header-menu',
         )); ?>
     </nav>
 </div>

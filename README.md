@@ -228,3 +228,42 @@ After enabling this, blocks in the editor will have "Wide width" and "Full width
 ---
 
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.
+
+## Registering Navigation Menus
+
+To add custom navigation menus to your theme, use the `register_nav_menus` function inside a method or function hooked to an appropriate action, such as `init`. This allows users to assign menus from the WordPress admin.
+
+**Example:**
+
+```php
+add_action( 'init', array( $this, 'register_menus' ) );
+
+public function register_menus() {
+    register_nav_menus( array(
+        'mangrove-header-menu' => esc_html__( 'Header Menu', 'mangrove-collection' ),
+        'mangrove-footer-menu' => esc_html__( 'Footer Menu', 'mangrove-collection' ),
+    ) );
+}
+```
+
+**Explanation:**
+
+-    `register_nav_menus` registers multiple menu locations for your theme.
+-    Users can assign custom menus to these locations via **Appearance > Menus** in the WordPress admin.
+-    Use `esc_html__()` for translation-ready menu names.
+
+**Displaying Menus in Templates:**
+
+To display a registered menu in your theme (e.g., in `header.php` or `footer.php`):
+
+```php
+wp_nav_menu( array(
+    'theme_location' => 'mangrove-header-menu',
+    'menu_class'     => 'header-menu',
+) );
+```
+
+Replace `'mangrove-header-menu'` with `'mangrove-footer-menu'` for the footer menu.
+
+**Reference:**  
+[Navigation Menus – WordPress Developer Resources](https://developer.wordpress.org/themes/functionality/navigation-menus/)
