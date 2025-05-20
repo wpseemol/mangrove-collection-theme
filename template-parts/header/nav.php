@@ -6,9 +6,13 @@
  * @version 1.0.0
  */
 
+use MANGROVE_COLLECTION\Inc\Menus;
+
+$menu_class = Menus::get_instance();
+$menu_class->get_menu_id('mangrove-header-menu');
 ?>
 
-<div class="nav-menu flex justify-between items-center container mx-auto text-white">
+<div class="nav-menu flex justify-between items-center container mx-auto">
     <div class="logo text-3xl font-bold capitalize max-h-[5rem]">
 
 

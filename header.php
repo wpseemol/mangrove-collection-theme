@@ -29,6 +29,6 @@
         wp_body_open();
     } ?>
     <main class="">
-        <header class="bg-green-900 ">
+        <header class="bg-green-900 text-white">
             <?php get_template_part('template-parts/header/nav'); ?>
         </header>

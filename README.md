@@ -267,3 +267,99 @@ Replace `'mangrove-header-menu'` with `'mangrove-footer-menu'` for the footer me
 
 **Reference:**  
 [Navigation Menus – WordPress Developer Resources](https://developer.wordpress.org/themes/functionality/navigation-menus/)
+
+## Getting a Menu ID by Location
+
+To retrieve the menu ID for a specific menu location in your theme, you can use a helper function like the following:
+
+```php
+public function get_menu_id( $location ) {
+    $locations = get_nav_menu_locations();
+    return isset( $locations[ $location ] ) ? $locations[ $location ] : false;
+}
+```
+
+**Usage Example:**
+
+```php
+$menu_id = $this->get_menu_id( 'mangrove-header-menu' );
+if ( $menu_id ) {
+    $menu_items = wp_get_nav_menu_items( $menu_id );
+    // Loop through $menu_items to build your custom menu.
+}
+```
+
+This function returns the menu ID assigned to the specified location, or `false` if none is set.
+
+---
+
+## Custom Menu Design with Tailwind CSS
+
+To create a custom menu design using Tailwind CSS, loop through the menu items and output your own HTML structure with Tailwind utility classes. Here’s an example for a navigation menu with dropdown support:
+
+```php
+function mangrove_custom_menu( $location ) {
+    $locations = get_nav_menu_locations();
+    if ( ! isset( $locations[ $location ] ) ) {
+        return;
+    }
+    $menu_id = $locations[ $location ];
+    $menu_items = wp_get_nav_menu_items( $menu_id );
+
+    if ( ! $menu_items ) {
+        return;
+    }
+
+    $menu_tree = array();
+    foreach ( $menu_items as $item ) {
+        if ( ! $item->menu_item_parent ) {
+            $menu_tree[ $item->ID ] = array( 'item' => $item, 'children' => array() );
+        }
+    }
+    foreach ( $menu_items as $item ) {
+        if ( $item->menu_item_parent && isset( $menu_tree[ $item->menu_item_parent ] ) ) {
+            $menu_tree[ $item->menu_item_parent ]['children'][] = $item;
+        }
+    }
+
+    echo '<ul class="flex gap-8 list-none m-0 p-0">';
+    foreach ( $menu_tree as $node ) {
+        $has_children = ! empty( $node['children'] );
+        echo '<li class="relative group">';
+        echo '<a href="' . esc_url( $node['item']->url ) . '" class="block px-4 py-2 text-gray-800 hover:text-blue-600 transition-colors">' . esc_html( $node['item']->title );
+        if ( $has_children ) {
+            echo ' <span class="ml-1 text-xs">&#9660;</span>';
+        }
+        echo '</a>';
+        if ( $has_children ) {
+            echo '<ul class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg min-w-[180px] z-10">';
+            foreach ( $node['children'] as $child ) {
+                echo '<li><a href="' . esc_url( $child->url ) . '" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 whitespace-nowrap transition-colors">' . esc_html( $child->title ) . '</a></li>';
+            }
+            echo '</ul>';
+        }
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+```
+
+**How to Use:**
+
+```php
+mangrove_custom_menu( 'mangrove-header-menu' );
+```
+
+---
+
+**Tips:**
+
+-    Adjust Tailwind classes to match your theme’s style.
+-    For accessibility and mobile support, consider adding keyboard navigation and responsive features.
+
+---
+
+**Reference:**
+
+-    [wp_get_nav_menu_items – WordPress Developer Resources](https://developer.wordpress.org/reference/functions/wp_get_nav_menu_items/)
+-    [Navigation Menus – WordPress Developer Resources](https://developer.wordpress.org/themes/functionality/navigation-menus/)
