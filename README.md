@@ -78,7 +78,7 @@ add_theme_support( 'title-tag' );
 
 ### `custom-logo`
 
-Allows users to upload a custom logo via the Customizer, which can be displayed in your theme.
+Allows users to upload a custom logo via the Customize, which can be displayed in your theme.
 
 ```php
 add_theme_support( 'custom-logo', array(
@@ -91,7 +91,7 @@ add_theme_support( 'custom-logo', array(
 
 ### `custom-background`
 
-Lets users set a custom background color or image for their site through the Customizer.
+Lets users set a custom background color or image for their site through the Customize.
 
 ```php
 add_theme_support( 'custom-background', array(
