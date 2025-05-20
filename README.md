@@ -89,6 +89,16 @@ add_theme_support( 'custom-logo', array(
 ) );
 ```
 
+To display the custom logo on the frontend, use the `the_custom_logo()` function in your theme template (typically in `header.php`):
+
+```php
+if ( function_exists( 'the_custom_logo' ) ) {
+    the_custom_logo();
+}
+```
+
+This will output the logo uploaded by the user, or nothing if no logo is set.
+
 ### `custom-background`
 
 Lets users set a custom background color or image for their site through the Customize.
@@ -99,5 +109,17 @@ add_theme_support( 'custom-background', array(
     'default-image' => '',
 ) );
 ```
+
+### Displaying the Custom Background on the Frontend
+
+WordPress automatically applies the custom background settings (color or image) to the `<body>` element of your theme if your theme uses the `body_class()` function. To ensure the background displays correctly, include `<?php body_class(); ?>` in your `<body>` tag in `header.php`:
+
+```php
+<body <?php body_class(); ?>>
+```
+
+WordPress will handle the output of the background styles based on the user's settings in the Customize. No additional code is required to display the custom background on the frontend.
+
+**Tip:** Make sure your theme's CSS does not override the background styles set by WordPress.
 
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.
