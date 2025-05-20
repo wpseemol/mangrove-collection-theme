@@ -122,4 +122,34 @@ WordPress will handle the output of the background styles based on the user's se
 
 **Tip:** Make sure your theme's CSS does not override the background styles set by WordPress.
 
+## Additional Theme Supports
+
+### `post-thumbnails`
+
+Enables support for featured images (post thumbnails) in posts and pages.
+
+```php
+add_theme_support( 'post-thumbnails' );
+```
+
+**Note:**  
+After enabling this, you can set featured images in the WordPress editor. You can display the post thumbnail in your templates using:
+
+```php
+if ( has_post_thumbnail() ) {
+    the_post_thumbnail();
+}
+```
+
+### `customize-selective-refresh-widgets`
+
+Allows widgets to be updated instantly in the Customizer preview without a full page reload.
+
+```php
+add_theme_support( 'customize-selective-refresh-widgets' );
+```
+
+**Note:**  
+This improves the Customizer experience by making widget changes appear faster and more smoothly.
+
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.
