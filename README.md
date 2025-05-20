@@ -152,4 +152,51 @@ add_theme_support( 'customize-selective-refresh-widgets' );
 **Note:**  
 This improves the Customizer experience by making widget changes appear faster and more smoothly.
 
+### `automatic-feed-links`
+
+Enables automatic generation of feed links (RSS) in the `<head>` section of your theme.
+
+```php
+add_theme_support( 'automatic-feed-links' );
+```
+
+This ensures your site’s posts and comments RSS feeds are discoverable by feed readers.
+
+### `html5`
+
+Enables HTML5 markup support for various theme elements, improving semantic structure and accessibility.
+
+```php
+add_theme_support( 'html5', array(
+    'comment-list',
+    'comment-form',
+    'search-form',
+    'gallery',
+    'caption',
+    'script',
+    'style'
+) );
+```
+
+This outputs HTML5 markup for the specified elements, replacing older XHTML structures.
+
+### `add_editor_style`
+
+Allows you to add custom styles to the WordPress visual editor, making it match your theme’s frontend styles.
+
+```php
+add_editor_style();
+```
+
+You can pass a custom stylesheet filename as an argument if you want to use a specific CSS file:
+
+```php
+add_editor_style( 'editor-style.css' );
+```
+
+**Note:**  
+Place your editor styles in the theme root or specify the path.
+
+---
+
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.

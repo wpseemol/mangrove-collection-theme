@@ -51,5 +51,20 @@ class MANGROVE_COLLECTION_THEME
         add_theme_support("post-thumbnails");
 
         add_theme_support("customize-selective-refresh-widgets");
+
+        add_theme_support("automatic-feed-links");
+
+        add_theme_support("html5", array(
+            'comment-list',
+            'comment-form',
+            'search-form',
+            'gallery',
+            'caption',
+            "gallery",
+            "script",
+            "style"
+        ));
+
+        add_editor_style();
     }
 }
