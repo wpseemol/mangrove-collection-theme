@@ -40,5 +40,10 @@ class MANGROVE_COLLECTION_THEME
             'flex-height' => true,
             'flex-width' => true,
         ));
+
+        add_theme_support("custom-background", array(
+            "default-color" => "#fff",
+            "default-image" => "",
+        ));
     }
 }

@@ -38,4 +38,66 @@ For support or inquiries, please contact [wpseemol@gmail.com].
 
 ---
 
-Thank you for using the Mangrove Collection Theme!
+## Usage Example
+
+To enable theme features, use `add_theme_support` inside a setup function hooked to `after_setup_theme`. This ensures features are registered at the correct point in the WordPress loading process.
+
+```php
+function mangrove_theme_setup() {
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
+    add_theme_support( 'custom-background', array(
+        'default-color' => 'ffffff',
+        'default-image' => '',
+    ) );
+}
+add_action( 'after_setup_theme', 'mangrove_theme_setup' );
+```
+
+**Explanation:**
+
+-    `after_setup_theme` is the recommended hook for adding theme support features.
+-    Place this code in your theme's `functions.php` file.
+
+## add_theme_support
+
+The `add_theme_support` function in WordPress enables specific theme features. Here are some commonly used options:
+
+### `title-tag`
+
+Enables WordPress to manage the document title, allowing you to avoid hardcoding `<title>` tags in your theme files.
+
+```php
+add_theme_support( 'title-tag' );
+```
+
+### `custom-logo`
+
+Allows users to upload a custom logo via the Customizer, which can be displayed in your theme.
+
+```php
+add_theme_support( 'custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+) );
+```
+
+### `custom-background`
+
+Lets users set a custom background color or image for their site through the Customizer.
+
+```php
+add_theme_support( 'custom-background', array(
+    'default-color' => 'ffffff',
+    'default-image' => '',
+) );
+```
+
+Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.
