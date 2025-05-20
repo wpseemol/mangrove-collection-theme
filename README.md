@@ -197,6 +197,23 @@ add_editor_style( 'editor-style.css' );
 **Note:**  
 Place your editor styles in the theme root or specify the path.
 
+### `wp-block-styles`
+
+Enables support for default block styles provided by WordPress core, ensuring that your theme displays blocks with consistent styling as intended by the block editor.
+
+```php
+add_theme_support( 'wp-block-styles' );
+```
+
+**What it does:**  
+When enabled, WordPress will enqueue the core block styles (`/wp-includes/css/dist/block-library/style.css`) on the frontend. This ensures that blocks such as paragraphs, images, galleries, and others appear as designed in the editor, maintaining visual consistency between the editor and the live site.
+
+**When to use:**  
+Add this if you want your theme to inherit the default block styles, or as a starting point before adding your own custom block styles.
+
+**Tip:**  
+You can override or extend these styles in your theme’s stylesheet if you want to customize the appearance of specific blocks.
+
 ---
 
 Add these functions in your theme's `functions.php` file, typically within a setup function hooked to `after_setup_theme`.
