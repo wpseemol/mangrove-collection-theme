@@ -363,3 +363,21 @@ mangrove_custom_menu( 'mangrove-header-menu' );
 
 -    [wp_get_nav_menu_items – WordPress Developer Resources](https://developer.wordpress.org/reference/functions/wp_get_nav_menu_items/)
 -    [Navigation Menus – WordPress Developer Resources](https://developer.wordpress.org/themes/functionality/navigation-menus/)
+
+## Default WordPress Post Types
+
+| Name            | Post Type Key         | Description                                |
+| --------------- | --------------------- | ------------------------------------------ |
+| Post            | `post`                | Regular blog posts                         |
+| Page            | `page`                | Static pages (e.g., About, Contact)        |
+| Attachment      | `attachment`          | Media files uploaded to the Media Library  |
+| Revision        | `revision`            | Autosaved or manually saved post revisions |
+| Navigation Menu | `nav_menu_item`       | Navigation menu items                      |
+| Custom CSS      | `custom_css`          | Custom CSS changes made in the Customizer  |
+| Changeset       | `customize_changeset` | Customizer changesets                      |
+| Template Part   | `wp_template_part`    | Block theme template parts                 |
+| Template        | `wp_template`         | Block theme templates                      |
+| Block           | `wp_block`            | Reusable blocks created in the editor      |
+| --------------- | --------------------- | ------------------------------------------ |
+
+These are the default post types registered by WordPress core.
