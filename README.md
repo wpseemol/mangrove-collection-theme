@@ -381,3 +381,63 @@ mangrove_custom_menu( 'mangrove-header-menu' );
 | --------------- | --------------------- | ------------------------------------------ |
 
 These are the default post types registered by WordPress core.
+
+## Template Hierarchy
+
+The WordPress **template hierarchy** determines which template file(s) WordPress uses to display different types of content. When a page is requested, WordPress searches for the most specific template file available in your theme, following a predefined order.
+
+### How the Template Hierarchy Works
+
+When a user visits a URL, WordPress checks the type of content being requested (e.g., a single post, a page, a category archive) and looks for template files in a specific order. If a more specific template is not found, it falls back to more general templates.
+
+For example, when displaying a single post, WordPress will look for these files in order:
+
+1. `single-{post-type}-{slug}.php`
+2. `single-{post-type}.php`
+3. `single.php`
+4. `singular.php`
+5. `index.php`
+
+The first file that exists in your theme will be used.
+
+### Common Template Files
+
+| Template File            | Used For                                          |
+| ------------------------ | ------------------------------------------------- |
+| `front-page.php`         | The site's front page (if set in Settings)        |
+| `home.php`               | The blog posts index (if not front page)          |
+| `single.php`             | Single posts (any post type)                      |
+| `single-{post-type}.php` | Single custom post types                          |
+| `page.php`               | Static pages                                      |
+| `category.php`           | Category archive pages                            |
+| `tag.php`                | Tag archive pages                                 |
+| `archive.php`            | Generic archives (categories, tags, custom types) |
+| `search.php`             | Search results                                    |
+| `404.php`                | Not found (404) pages                             |
+| `index.php`              | Fallback for all requests                         |
+
+### Visual Overview
+
+```
+index.php
+ ├── front-page.php
+ ├── home.php
+ ├── single.php
+ │    └── single-{post-type}.php
+ ├── page.php
+ ├── archive.php
+ │    ├── category.php
+ │    ├── tag.php
+ │    └── author.php
+ ├── search.php
+ └── 404.php
+```
+
+### Tips
+
+-    Always include an `index.php` file—it's the ultimate fallback.
+-    Use more specific templates for custom post types or taxonomies for better control over layout and design.
+-    Refer to the [WordPress Template Hierarchy documentation](https://developer.wordpress.org/themes/basics/template-hierarchy/) for a complete diagram and details.
+
+**Summary:**  
+The template hierarchy gives you flexibility to customize how different types of content are displayed by creating template files with specific names in your theme.
