@@ -35,8 +35,10 @@ class Assets
         // register and enqueue stylesheets
         wp_register_style("main", MANGROVE_COLLECTION_DIR_URI . "/style.css", array(), filemtime(MANGROVE_COLLECTION_DIR_PATH . "/style.css"), "all");
         wp_register_style("mangrove-collection", MANGROVE_COLLECTION_DIR_URI . "/assets/css/main.css", array(), filemtime(MANGROVE_COLLECTION_DIR_PATH . "/assets/css/main.css"), "all");
+        wp_register_style("mangrove-collection-tailwind", MANGROVE_COLLECTION_DIR_URI . "/assets/css/tOutput.css", array(), filemtime(MANGROVE_COLLECTION_DIR_PATH . "/assets/css/tOutput.css"), "all");
         wp_enqueue_style("main");
         wp_enqueue_style("mangrove-collection");
+        wp_enqueue_style("mangrove-collection-tailwind");
     }
 
     public function register_scripts()
@@ -45,7 +47,7 @@ class Assets
         wp_register_script("main", MANGROVE_COLLECTION_DIR_URI . "/assets/js/main.js", array(), filemtime(MANGROVE_COLLECTION_DIR_PATH . "/assets/js/main.js"), true);
 
         // tailwind cdn
-        wp_register_script("tailwind", "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4", array(), null, false);
+        // wp_register_script("tailwind", "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4", array(), null, false);
         wp_enqueue_script("main");
         wp_enqueue_script("tailwind");
     }

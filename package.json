@@ -1,0 +1,17 @@
+{
+     "name": "mangrove-collection",
+     "version": "1.0.0",
+     "description": "",
+     "main": "index.js",
+     "scripts": {
+          "tDev": "npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/tOutput.css --minify --watch"
+     },
+     "keywords": [],
+     "author": "",
+     "license": "ISC",
+     "packageManager": "pnpm@10.11.0",
+     "dependencies": {
+          "@tailwindcss/cli": "^4.1.7",
+          "tailwindcss": "^4.1.7"
+     }
+}
